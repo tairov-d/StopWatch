@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moN-cF-6ux">
+                                <rect key="frame" x="274.5" y="637" width="75" height="75"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="play-button" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHZ-Kx-QKW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz8-CZ-NAB">
+                                <rect key="frame" x="64.5" y="637" width="75" height="75"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="stop-button" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jld-N4-CK4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2J-4f-TjG">
+                                <rect key="frame" x="169.5" y="637" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="MC8-4R-KUh"/>
+                                    <constraint firstAttribute="width" constant="75" id="hXD-zu-LsL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="pause" imageContentMode="scaleAspectFit"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="pauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3OI-x3-UWH"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="Fps-Ys-KWC">
+                                <rect key="frame" x="169.5" y="84" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="LOU-cP-VdU"/>
+                                    <constraint firstAttribute="width" constant="75" id="vK0-Ob-t7L"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HZ7-UD-Y1g">
+                                <rect key="frame" x="121.5" y="184" width="171" height="32"/>
+                                <segments>
+                                    <segment title="Stopwatch"/>
+                                    <segment title="Timer"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="24o-rE-emt"/>
+                                </connections>
+                            </segmentedControl>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxa-uB-GwN">
+                                <rect key="frame" x="0.0" y="373" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Jti-at-9Au"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="667677600.07490396">
+                                    <!--2022-02-27 18:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ru_KG"/>
+                                <connections>
+                                    <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="DS3-Mz-cX8"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTk-et-jJE">
+                                <rect key="frame" x="123" y="235" width="168" height="58.5"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="50"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bz8-CZ-NAB" secondAttribute="bottom" constant="150" id="2kn-sU-xpQ"/>
+                            <constraint firstItem="HZ7-UD-Y1g" firstAttribute="top" secondItem="Fps-Ys-KWC" secondAttribute="bottom" constant="25" id="4Zj-cL-kvB"/>
+                            <constraint firstItem="bxa-uB-GwN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4kV-rK-1IC"/>
+                            <constraint firstItem="Bz8-CZ-NAB" firstAttribute="height" secondItem="f2J-4f-TjG" secondAttribute="height" id="Af2-8h-wMV"/>
+                            <constraint firstItem="oTk-et-jJE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AjC-Ow-8oR"/>
+                            <constraint firstItem="f2J-4f-TjG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fn2-kt-Zp7"/>
+                            <constraint firstItem="moN-cF-6ux" firstAttribute="height" secondItem="f2J-4f-TjG" secondAttribute="height" id="NYE-sw-dwV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f2J-4f-TjG" secondAttribute="bottom" constant="150" id="Qgn-FM-qk8"/>
+                            <constraint firstItem="HZ7-UD-Y1g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U6c-K0-xpf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f2J-4f-TjG" secondAttribute="bottom" constant="150" id="YLx-AD-s9b"/>
+                            <constraint firstItem="oTk-et-jJE" firstAttribute="top" secondItem="HZ7-UD-Y1g" secondAttribute="bottom" constant="20" id="aAb-j4-2fv"/>
+                            <constraint firstItem="f2J-4f-TjG" firstAttribute="leading" secondItem="Bz8-CZ-NAB" secondAttribute="trailing" constant="30" id="bX7-NZ-hs8"/>
+                            <constraint firstItem="Fps-Ys-KWC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="dUc-Pg-M3u"/>
+                            <constraint firstItem="moN-cF-6ux" firstAttribute="width" secondItem="f2J-4f-TjG" secondAttribute="width" id="dW1-ML-a7n"/>
+                            <constraint firstItem="Fps-Ys-KWC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ljx-AO-muE"/>
+                            <constraint firstItem="moN-cF-6ux" firstAttribute="leading" secondItem="f2J-4f-TjG" secondAttribute="trailing" constant="30" id="nPP-JP-tUu"/>
+                            <constraint firstItem="Bz8-CZ-NAB" firstAttribute="width" secondItem="f2J-4f-TjG" secondAttribute="width" id="pV6-Kq-vfn"/>
+                            <constraint firstItem="bxa-uB-GwN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="udQ-Ws-uVI"/>
+                            <constraint firstItem="bxa-uB-GwN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uyX-uN-UnU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="moN-cF-6ux" secondAttribute="bottom" constant="150" id="yeM-fM-1Z8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="bxa-uB-GwN" id="gTf-vb-zlZ"/>
+                        <outlet property="segmentedlControl" destination="HZ7-UD-Y1g" id="MMA-jJ-hjf"/>
+                        <outlet property="startOutlet" destination="moN-cF-6ux" id="fJN-HV-WHE"/>
+                        <outlet property="timeLabel" destination="oTk-et-jJE" id="kKg-WZ-c1t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause" width="512" height="512"/>
+        <image name="play-button" width="512" height="512"/>
+        <image name="stop-button" width="512" height="512"/>
+        <image name="stopwatch" width="512" height="512"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
